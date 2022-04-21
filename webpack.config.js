@@ -1,27 +1,41 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
-const webpack = require('webpack')
 
-module.exports={
-    entry: './app/index.js',
+module.exports = {
+    mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
+    entry: path.join(__dirname, "src/index.js"), //'./app/index.js',
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'bundle.js'
+    },
+    devServer: {
+        static: {
+            directory: path.join(__dirname, 'public') 
+        },
+        port: 3000,
+    },
     module: {
         rules: [
-            {test: /\.svg$/, use: 'svg-inline-loader'},
-            {test: /\.css$/, use: ['style-loader', 'css-loader']},
-            {test: /\.(js)$/, use: 'babel-loader'}
+            {
+                test: /\.svg$/, 
+                use: 'svg-inline-loader'
+            },
+            {
+                test: /\.css$/, 
+                use: ['style-loader', 'css-loader']
+            },
+            {
+                test: /\.(js|jsx)$/, 
+                use: {
+                    loader: 'babel-loader'
+                }, 
+                exclude: /node_modules/,
+            }
         ]
     },
-    output: {
-        path: {
-            path: path.resolve(__dirname, 'dist'),
-            filename: 'index_bundle.js'
-        }
-    },
     plugins: [
-        new HtmlWebpackPlugin(),
-        new webpack.EnvironmentPlugin({
-            'NODE_ENV': 'production',
-        })
+        new HtmlWebpackPlugin({
+            template: path.join(__dirname, "public", "index.html")
+        }),
     ],
-    mode: 'production'
 }
