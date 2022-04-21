@@ -13,6 +13,7 @@ module.exports = {
             directory: path.join(__dirname, 'public') 
         },
         port: 3000,
+		historyApiFallback: true,
     },
     module: {
         rules: [
@@ -38,4 +39,10 @@ module.exports = {
             template: path.join(__dirname, "public", "index.html")
         }),
     ],
+    resolve: {
+        alias: {
+            'react-router-dom': path.resolve('./node_modules/react-router-dom'),
+        },
+        extensions: ['.js', '.jsx'],
+    },
 }

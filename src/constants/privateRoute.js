@@ -11,7 +11,7 @@ export default function PrivateRoute({path, Component, ...rest}) {
         if(isAuth){
             return <Component {...props} {...rest}/>
         } else {
-            return <Navigate to="/" replace={true}/>
+            return <Navigate to="/login" replace={true}/>
         }
     }
 
