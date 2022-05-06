@@ -1,5 +1,5 @@
 import React from 'react'
-import HomePage from '../react/pages/home'
+import {HomePage} from '../react/pages/home'
 import UnprotectedPage from '../react/pages/unprotected'
 import ProtectedPage from '../react/pages/protected'
 import { LoginPage } from '../react/pages/login'
@@ -8,7 +8,7 @@ export const path = [
     {
         path: '/',
         component: 'home',
-        private: true
+        private: false
     },
     {
         path: 'login',

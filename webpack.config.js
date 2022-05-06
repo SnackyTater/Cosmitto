@@ -1,8 +1,10 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
+const environment = process.env.NODE_ENV === 'production' ? 'production' : 'development'
+require('dotenv').config({path: path.join(__dirname, 'env', `${environment}.env`)})
 
 module.exports = {
-    mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
+    mode: environment, //process.env.NODE_ENV === 'production' ? 'production' : 'development',
     entry: path.join(__dirname, "src/index.js"), //'./app/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -12,7 +14,7 @@ module.exports = {
         static: {
             directory: path.join(__dirname, 'public') 
         },
-        port: 5000,
+        port: 3000,
 		historyApiFallback: true,
     },
     module: {
@@ -31,7 +33,15 @@ module.exports = {
                     loader: 'babel-loader'
                 }, 
                 exclude: /node_modules/,
-            }
+            },
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                use: [
+                  {
+                    loader: 'file-loader',
+                  },
+                ],
+            },
         ]
     },
     plugins: [

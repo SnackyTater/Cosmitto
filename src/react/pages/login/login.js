@@ -7,7 +7,9 @@ const worker = new Worker(new URL('../../../worker/calculate.js', import.meta.ur
 
 export const LoginPage = () => {
   // const [data, setData] = useState(null);
+  const color = ['red', 'blue', 'green', 'yellow'];
   const [state, setState] = React.useState(null);
+  const [colour, setColor] = React.useState('red');
 
   React.useEffect(() => {
     worker.onmessage = (message) => {
@@ -17,30 +19,34 @@ export const LoginPage = () => {
     return () => worker.terminate();
   }, [])
 
-  // useEffect(() => {
-  //   let sum = 1
-  //   setInterval(() => {
-  //     console.log(sum++);
-  //   }, 500)
-  // }, [])
+  useEffect(() => {
+    setInterval(() => {
+      const index = Math.floor(Math.random() * 4);
+      setColor(color[index])
+    }, 500)
+  }, [])
 
   const clickHandler = (e) => {
     e.preventDefault();
     worker.postMessage('do it');
   }
-
-  // const handleTest = () => {
-  //   setTimeout(() => {
-  //     count++;
-  //     console.log(count);
-  //   }, 100)
-  // }
+  
+  const killWorker = (e) => worker.terminate();
 
   return (
     <Fragment>
       <button onClick={clickHandler}>click to start</button>
+      <button onClick={killWorker}>click to terminate</button>
       <div>data is {state}</div>
-      {/* <button onClick={handleTest}>test</button> */}
+      <div
+        style={{
+          width: 100,
+          height: 100,
+          color: colour
+        }}
+      >
+        <h1>this is a very long text</h1>
+      </div>
     </Fragment>
   )
 }

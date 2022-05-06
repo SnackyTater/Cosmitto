@@ -2,8 +2,8 @@ import React from 'react';
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
 
 //
-import PrivateRoute from '../constants/privateRoute';
-import PublicRoute from '../constants/publicRoute';
+import PrivateRoute from './privateRoute';
+import PublicRoute from './publicRoute';
 
 //
 import { path, component } from './path';
