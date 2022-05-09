@@ -3,6 +3,7 @@ import { connect, useDispatch } from 'react-redux'
 
 import { increment, decrement } from '../../../redux'
 import { get } from '../../../api/api'
+import { saveToken, getToken } from '../../../utils/auth'
 
 const HomePage = props => {
   const dispatch = useDispatch()
@@ -22,6 +23,14 @@ const HomePage = props => {
         onClick={() => get({url: '', config: {}})}
       >
         press
+      </button>
+      <button
+        onClick={() => saveToken('aaaaa')}
+      >cookie</button>
+      <button
+        onClick={() => console.log(getToken())}
+      >
+        cookie get
       </button>
     </React.Fragment>
   )
