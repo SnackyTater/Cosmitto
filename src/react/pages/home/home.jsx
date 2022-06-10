@@ -1,37 +1,19 @@
 import React from 'react'
-import { connect, useDispatch } from 'react-redux'
+import { connect } from 'react-redux'
 
-import { increment, decrement } from '../../../redux'
-import { get } from '../../../api/api'
-import { saveToken, getToken } from '../../../utils/auth'
+import { INCREMENT, DECREMENT } from '../../../redux/action'
 
 const HomePage = props => {
-  const dispatch = useDispatch()
+  const {counter, dispatch} = props
 
-  const {value} = props
+  const handleIncrease = () => dispatch({type: INCREMENT, action: {}})
+  const handleDecrease = () => dispatch({type: DECREMENT, action: {}})
 
   return (
     <React.Fragment>
-      <p>{value}</p>
-      <button
-        onClick={() => dispatch(increment())}
-      >increase</button>
-      <button
-        onClick={() => dispatch(decrement())}
-      >decrease</button>
-      <button
-        onClick={() => get({url: '', config: {}})}
-      >
-        press
-      </button>
-      <button
-        onClick={() => saveToken('aaaaa')}
-      >cookie</button>
-      <button
-        onClick={() => console.log(getToken())}
-      >
-        cookie get
-      </button>
+      {counter}
+      <button onClick={handleIncrease}>increase</button>
+      <button onClick={handleDecrease}>increase</button>
     </React.Fragment>
   )
 }

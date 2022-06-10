@@ -5,7 +5,7 @@ const path = require('path')
 //let it handle dot env
 const environment = process.env.NODE_ENV === 'production' ? 'production' : 'development'
 const env = require('dotenv').config({path: path.join(__dirname, 'env', `${environment}.env`)}).parsed
-// const parseEnvKey = require('./src/utils/parseEnvKey')
+const parseEnvKey = require('./src/utils/parseEnvKey')
 
 module.exports = {
     mode: environment,
@@ -28,8 +28,12 @@ module.exports = {
                 use: 'svg-inline-loader'
             },
             {
-                test: /\.css$/, 
-                use: ['style-loader', 'css-loader']
+                test: /\.s[ac]ss$/i,
+                use: [
+                  'style-loader',
+                  'css-loader',
+                  'sass-loader',
+                ],
             },
             {
                 test: /\.(js|jsx)$/, 
@@ -52,7 +56,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.join(__dirname, "public", "index.html")
         }),
-        // new webpack.DefinePlugin(parseEnvKey(env))
+        new webpack.DefinePlugin(parseEnvKey(env))
     ],
     resolve: {
         alias: {
