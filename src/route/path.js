@@ -4,11 +4,7 @@ import {HomePage} from '../react/pages/home'
 export const path = [
     {
         path: '/',
-        component: 'home',
+        component:  HomePage,
         private: false
     },
 ]
-
-export const component = {
-    home: HomePage
-}

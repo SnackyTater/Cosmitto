@@ -1,7 +1,7 @@
-export const saveToken = (token) => {
+export const saveToken = (token, maxAge) => {
     const now = new Date();
     const tomorrow = now.setTime(now.getTime() + (1000*60*60*24))
-    const expire = `expires=${tomorrow}`
+    const expire = `expires=${maxAge || tomorrow}`
     document.cookie = `token=${token};${expire};path=/`
 }
 

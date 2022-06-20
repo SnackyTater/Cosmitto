@@ -2,7 +2,7 @@ import React from 'react'
 import MuiChip from '@mui/material/Chip'
 import { styled } from '@mui/material/styles'
 
-const CustomChip = styled(MuiChip)(({ theme }) => ({
+const CustomChip = styled(MuiChip)(() => ({
     backgroundImage: 'linear-gradient(45deg,#fd267a,#ff7854)'
   }));
 

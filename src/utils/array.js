@@ -2,14 +2,12 @@ import { isArray, isFunction } from './type'
 
 export default class arrayUtils{
     constructor(arr){
-        if(!isArray(arr)) throw new Error('input value for constructor is not an array')
+        if(!isArray(arr)) throw new Error('invalid input for constructor')
         this.array = arr
     }
 
     removeDuplicate(f){
-        
-        if(!isFunction(f)) return new Error('type of value you put in to constructor is not an array')
-
+        if(!isFunction(f)) return new Error('invalid input for params')
         const a = new Set()
         return this.array.filter(i => {
             const k = f(i)
@@ -17,5 +15,14 @@ export default class arrayUtils{
             if(!n) a.add(k)
             return n
         })
+    }
+
+    find(f){
+        if(!isFunction(f)) return new Error('invalid input for params')
+
+        for(let i = 0; i < this.array.length; i ++){
+            const k = f(i)
+            if(k) return this.array[i]
+        }
     }
 }

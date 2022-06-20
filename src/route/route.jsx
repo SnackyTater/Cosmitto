@@ -6,7 +6,7 @@ import PrivateRoute from './privateRoute';
 import PublicRoute from './publicRoute';
 
 //
-import { path, component } from './path';
+import { path } from './path';
 import { history } from '../utils/history';
 
 export function RootRoute() {
@@ -18,9 +18,9 @@ export function RootRoute() {
               return <Route 
                 path={item.path} 
                 element={(item.private) ? (
-                  <PrivateRoute Component={component[item.component]}/>
+                  <PrivateRoute Component={item.component}/>
                 ) : (
-                  <PublicRoute Component={component[item.component]}/>
+                  <PublicRoute Component={item.component}/>
                 )}
                 key={index}
               />
