@@ -4,7 +4,7 @@ const path = require('path')
 
 //let it handle dot env
 const environment = process.env.NODE_ENV === 'production' ? 'production' : 'development'
-const env = require('dotenv').config({path: path.join(__dirname, 'env', `${environment}.env`)}).parsed
+const env = require('dotenv').config({ path: path.join(__dirname, 'env', `${environment}.env`) }).parsed
 const parseEnvKey = require('./src/utils/parseEnvKey')
 
 module.exports = {
@@ -16,38 +16,38 @@ module.exports = {
     },
     devServer: {
         static: {
-            directory: path.join(__dirname, 'public') 
+            directory: path.join(__dirname, 'public')
         },
         port: 3000,
-		historyApiFallback: true,
+        historyApiFallback: true,
     },
     module: {
         rules: [
             {
-                test: /\.svg$/, 
+                test: /\.svg$/,
                 use: 'svg-inline-loader'
             },
             {
                 test: /\.s[ac]ss$/i,
                 use: [
-                  'style-loader',
-                  'css-loader',
-                  'sass-loader',
+                    'style-loader',
+                    'css-loader',
+                    'sass-loader',
                 ],
             },
             {
-                test: /\.(js|jsx)$/, 
+                test: /\.(js|jsx)$/,
                 use: {
                     loader: 'babel-loader'
-                }, 
+                },
                 exclude: /node_modules/,
             },
             {
                 test: /\.(png|jpe?g|gif)$/i,
                 use: [
-                  {
-                    loader: 'file-loader',
-                  },
+                    {
+                        loader: 'file-loader',
+                    },
                 ],
             },
         ]
@@ -61,6 +61,9 @@ module.exports = {
     resolve: {
         alias: {
             'react-router-dom': path.resolve('./node_modules/react-router-dom'),
+            'utils': path.resolve(__dirname, 'src', 'utils'),
+            'component': path.resolve(__dirname, 'src', 'react', 'components'),
+            'constants': path.resolve(__dirname, 'src', 'constant'),
         },
         extensions: ['.js', '.jsx'],
     },
