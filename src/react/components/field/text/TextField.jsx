@@ -1,8 +1,11 @@
 import React from 'react'
+import 
+
 import { connect } from 'react-redux'
 
 const TextField = (props) => {
-    const {theme, field, form} = props
+    const {theme, field, form, type = 'default'} = props
+
     return (
         <div>TextField</div>
     )
