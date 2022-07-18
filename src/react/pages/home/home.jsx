@@ -13,7 +13,7 @@ const HomePage = props => {
   return (
     <React.Fragment>
       {counter}
-      <button onClick={handleIncrease}>increase</button>
+      <button onClick={handleIncrease}>increaaaase</button>
       <button onClick={handleDecrease}>increase</button>
       <Random />
     </React.Fragment>
