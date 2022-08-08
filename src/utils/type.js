@@ -18,7 +18,16 @@ export const isStringDate = (str) => new Date(str).toString() === 'Invalid Date'
 
 export const isFunction = (func) => typeof func === 'function'
 
-export default class Is {
+export const isJSON = (value) => {
+    try{
+        if(!value) return false
+        return JSON.parse(value) ? true : false
+    } catch (err) {
+        return false
+    }
+}
+
+class Is {
     constructor(value) {
         this.value = value
         this.check = false
@@ -55,4 +64,10 @@ export default class Is {
     function() {
         return isFunction(this.value)
     }
+
+    JSON(){
+        return isJSON(this.value)
+    }
 }
+
+export default (value) => new Is(value)

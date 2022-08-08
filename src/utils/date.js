@@ -1,7 +1,7 @@
 import moment from 'moment'
 import { isDate, isStringDate } from './type'
 
-export default class dateUtils{
+class dateUtils{
     constructor(date = new Date()){
         if(!isDate(date) || !isStringDate(date)) throw new Error('invalid input for constructor')
         this.date = new Date(date)
@@ -22,5 +22,7 @@ export default class dateUtils{
         return Math.abs(age_dt.getUTCFullYear() - 1970) 
     }
 }
+
+export default (value) => new dateUtils(value)
 
 //jose' silva method
