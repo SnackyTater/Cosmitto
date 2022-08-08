@@ -1,7 +1,7 @@
-import axios from '../constant/axios'
+import axios from '../../constant/axios'
 import {
     USER as userURL
-} from '../constant/api'
+} from '../../constant/api'
 
 export const getUserInfo = (config = {}) => axios.get(userURL, config)
 

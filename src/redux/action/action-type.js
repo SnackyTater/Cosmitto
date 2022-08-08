@@ -1,5 +1,3 @@
-export const UPDATE_THEME = 'UPDATE_THEME'
-
 export const INCREMENT = 'INCREMENT'
 export const DECREMENT = 'DECREMENT'
 

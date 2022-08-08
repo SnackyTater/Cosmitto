@@ -1,13 +1,5 @@
-.flex {
-    display: flex;
-}
-
-.row {
-    flex-direction: row;
-}
-
-.columns {
-    flex-direction: column;
+::-webkit-scrollbar {
+    width: 0;
 }
 
 .main-theme {

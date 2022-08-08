@@ -7,16 +7,21 @@ $bgLight: hsla(0, 0%, 94%, 1);
 $bannerColor-1: hsla(13, 100%, 61%, 1);
 $bannerColor-2: hsla(337, 98%, 57%, 1);
 
-.bg-theme-light{
+* {
     background-color: $bgLight;
     color: $textLight;
 }
 
-.bg-theme-dark{
+.dark * {
     background-color: $bgDark;
     color: $textDark;
 }
 
-.banner{
+#root {
+    width: 100vw;
+    height: 100vh;
+}
+
+.banner {
     background-image: linear-gradient(225deg, $bannerColor-1, $bannerColor-2);
 }

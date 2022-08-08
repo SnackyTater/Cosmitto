@@ -1,0 +1,19 @@
+.landing__container {
+    nav {
+        width: 100VW;
+        padding: 15px 20px;
+        background-color: white;
+        position: fixed;
+        display: flex;
+        justify-content: space-between;
+
+        ul {
+            display: flex;
+            list-style-type: none;
+
+            li {
+                margin-left: 20px;
+            }
+        }
+    }
+}
