@@ -1,16 +1,40 @@
 {
     "compilerOptions": {
-        "jsx": "react",
-        "target": "ES6",
-        "allowSyntheticDefaultImports": true,
-        "baseUrl": "./",
+        "baseUrl": ".",
         "paths": {
-            "*": [
+            "~components/*": [
+                "./src/components/*"
+            ],
+            "~constants/*": [
+                "./src/constant/*"
+            ],
+            "~pages/*": [
+                "src/pages/*"
+            ],
+            "~redux/*": [
+                "./src/redux/*"
+            ],
+            "~utils/*": [
+                "./src/utils/*"
+            ],
+            "~api/*": [
+                "./src/api/*"
+            ],
+            "~/*": [
                 "./src/*"
             ]
-        }
+        },
+        "module": "CommonJS",
+        "target": "ES6",
+        "moduleResolution": "classic",
+        "jsx": "react"
     },
+    "include": [
+        "src/**/*.js",
+        "src/**/*.jsx"
+    ],
     "exclude": [
-        "node_modules"
+        "node_modules",
+        "dist"
     ]
 }
