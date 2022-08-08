@@ -7,6 +7,8 @@ const environment = process.env.NODE_ENV === 'production' ? 'production' : 'deve
 const env = require('dotenv').config({ path: path.join(__dirname, 'env', `${environment}.env`) }).parsed
 const parseEnvKey = require('./src/utils/parseEnvKey')
 
+console.log(path.resolve(__dirname, './src/react/components'))
+
 module.exports = {
     mode: environment,
     entry: path.join(__dirname, "src/index.js"), //'./app/index.js',
@@ -61,11 +63,13 @@ module.exports = {
     resolve: {
         alias: {
             'react-router-dom': path.resolve('./node_modules/react-router-dom'),
-            'utils': path.resolve(__dirname, 'src', 'utils'),
-            'component': path.resolve(__dirname, 'src', 'react', 'components'),
-            'constant': path.resolve(__dirname, 'src', 'constant'),
-            'page': path.resolve(__dirname, 'src', 'react', 'pages'),
+            '~components': path.resolve(__dirname, './src/components'),
+            '~constants': path.resolve(__dirname, './src/constant'),
+            '~pages': path.resolve(__dirname, './src/pages'),
+            '~redux': path.resolve(__dirname, './src/redux'),
+            '~utils': path.resolve(__dirname, './src/utils'),
+            '~api': path.resolve(__dirname, './src/api'),
         },
-        extensions: ['.js', '.jsx'],
+        extensions: ['.js', '.jsx', '.json'],
     },
 }

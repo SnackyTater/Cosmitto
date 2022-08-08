@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Random } from 'component'
+import { Random } from '~components'
 
 import { INCREMENT, DECREMENT } from '../../../redux/action'
 

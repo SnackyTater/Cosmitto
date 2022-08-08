@@ -1,6 +1,6 @@
 import React from 'react'
-import { HomePage } from 'page/home'
-import { LandingPage } from 'page/landing'
+import { HomePage } from '~pages/home'
+import { LandingPage } from '~pages/landing'
 
 export const path = [
     {
