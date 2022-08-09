@@ -1,19 +1,24 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { IconButton, styled } from '@mui/material'
-import { UPDATE_THEME } from '../../../../redux/action'
+import React, { useState } from 'react'
+import { LightMode, DarkMode } from '@mui/icons-material'
 
-const themeButton = (props) => {
-  const {dispatch, theme} = props
+import { toggleTheme, isThemeDark } from 'utils/theme'
+import './style.scss'
 
-  handleClick = () => {
+export const ThemeButton = () => {
+  const [isDark, setDark] = useState(isThemeDark())
 
+  const handleChangeTheme = () => {
+    toggleTheme()
+    if (isDark) setDark(false)
+    else setDark(true)
   }
 
   return (
-    <div>themeButton</div>
+    <button onClick={handleChangeTheme} className="theme-btn__container">
+      <p>change theme</p>
+      {
+        isDark ? <DarkMode /> : <LightMode />
+      }
+    </button>
   )
 }
-const mapStateToProps = state => state.theme
-const connectedComponent = connect(mapStateToProps)(themeButton)
-export { connectedComponent as themeButton }

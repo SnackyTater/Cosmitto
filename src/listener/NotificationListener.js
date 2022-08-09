@@ -23,9 +23,12 @@ export const NotificationListener = props => {
         let mounted = true
         if (mounted) {
             if (auth) {
-                if (location.pathname !== "/chat")
+                if (location.pathname !== "/chat" && !ws)
                     setWS(new WebSocket("wss://ws.localhost:5000"))
-                else setWS(null)
+                else {
+                    ws.close()
+                    setWS(null)
+                }
             }
         }
         return () => (mounted = false)
@@ -40,8 +43,19 @@ export const NotificationListener = props => {
 
             ws.onmessage = event => {
                 const data = JSON.parse(event.data)
-                setNotification
             }
+
+            ws.onerror = error => {
+                console.log("error", error)
+                timeoutID = setTimeout(() => {
+                    setWS(new WebSocket(`ws://${process.env.HOST}`))
+                }, 10000)
+            }
+        }
+
+        return () => {
+            clearTimeout(timeoutID)
+            ws.close()
         }
     }, [ws])
 

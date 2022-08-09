@@ -16,6 +16,10 @@
 
 .columns {
     flex-direction: column;
+
+    ::-webkit-scrollbar {
+        width: 0;
+    }
 }
 
 .main-theme {

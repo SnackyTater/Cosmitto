@@ -8,13 +8,22 @@ $bannerColor-1: hsla(13, 100%, 61%, 1);
 $bannerColor-2: hsla(337, 98%, 57%, 1);
 
 .bg-theme-light {
-    background-color: $bgLight;
-    color: $textLight;
+    * {
+        background-color: $bgLight;
+        color: $textLight;
+    }
 }
 
 .bg-theme-dark {
-    background-color: $bgDark;
-    color: $textDark;
+    .dark * {
+        background-color: $bgDark;
+        color: $textDark;
+    }
+}
+
+#root {
+    width: 100vw;
+    height: 100vh;
 }
 
 .banner {

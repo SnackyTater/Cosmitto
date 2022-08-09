@@ -1,8 +1,7 @@
 import React from 'react'
-import MuiChip from '@mui/material/Chip'
 
-export const Chip = (props) => {
+export const Chip = ({ label, active }) => {
   return (
-    <div>sss</div>
+    <div className={`chip ${active ? 'active' : ''}`}>{label}</div>
   )
 }

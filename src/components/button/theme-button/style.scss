@@ -1,0 +1,15 @@
+.theme-btn {
+    &__container {
+        display: flex;
+        padding: 0.25rem 0.5rem;
+        gap: 1rem;
+        border: 1px solid gray;
+        border-radius: 5px;
+
+        p {
+            margin: 0;
+        }
+    }
+
+    &__text {}
+}
