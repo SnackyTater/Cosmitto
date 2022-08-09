@@ -1,6 +1,7 @@
-export { DatePicker } from './picker'
-export { NormalButton, IconButton, LoadingButton } from './button'
-export { OneKnobSlider, TwoKnobSlider } from './slider'
-export { SingleAvatar, GroupAvatar } from './avatar'
-export { Chip } from './chip'
-export { Random } from './random'
+export {DatePicker} from "./picker"
+export {NormalButton, IconButton, LoadingButton} from "./button"
+export {OneKnobSlider, TwoKnobSlider} from "./slider"
+export {SingleAvatar, GroupAvatar} from "./avatar"
+export {Chip} from "./chip"
+export {Random} from "./random"
+export {Snackbar} from "./snackbar"

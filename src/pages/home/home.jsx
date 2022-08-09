@@ -1,25 +1,25 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { Random } from '~components'
+import React from "react"
+import {connect} from "react-redux"
+import {Random} from "~components"
 
-import { INCREMENT, DECREMENT } from '../../../redux/action'
+import {INCREMENT, DECREMENT} from "~redux/action"
 
 const HomePage = props => {
-  const { counter, dispatch } = props
+    const {counter, dispatch} = props
 
-  const handleIncrease = () => dispatch({ type: INCREMENT, action: {} })
-  const handleDecrease = () => dispatch({ type: DECREMENT, action: {} })
+    const handleIncrease = () => dispatch({type: INCREMENT, action: {}})
+    const handleDecrease = () => dispatch({type: DECREMENT, action: {}})
 
-  return (
-    <React.Fragment>
-      {counter}
-      <button onClick={handleIncrease}>increaaaase</button>
-      <button onClick={handleDecrease}>increase</button>
-      <Random />
-    </React.Fragment>
-  )
+    return (
+        <React.Fragment>
+            {counter}
+            <button onClick={handleIncrease}>increaaaase</button>
+            <button onClick={handleDecrease}>increase</button>
+            <Random />
+        </React.Fragment>
+    )
 }
 
 const mapStateToProps = state => state.counter
 const connectedPage = connect(mapStateToProps)(HomePage)
-export { connectedPage as HomePage }
+export {connectedPage as HomePage}

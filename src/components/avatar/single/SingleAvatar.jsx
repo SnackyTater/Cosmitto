@@ -1,8 +1,5 @@
-import React from 'react'
+import React from "react"
 
-
-export const SingleAvatar = () => {
-  return (
-    <div>SingleAvatar</div>
-  )
+export const SingleAvatar = ({src, alt, size}) => {
+    return <img src={src} alt={alt} className={`circle ${size}`} />
 }
