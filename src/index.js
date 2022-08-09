@@ -3,6 +3,7 @@ import {Provider} from "react-redux"
 import {createRoot} from "react-dom/client"
 
 import {store as rootStore} from "./redux"
+import {App} from "./app"
 
 import "./styles/metric.scss"
 import "./styles/color.scss"

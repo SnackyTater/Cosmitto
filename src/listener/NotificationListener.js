@@ -1,8 +1,7 @@
 import React, {useState, useEffect} from "react"
-import {useLocation} from "react-router-dom"
 import {useSelector} from "react-redux"
 
-import {Snackbar} from "~components/snackbar"
+import {SnackBar} from "~components/snackbar"
 
 const image =
     "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cmFuZG9tfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
@@ -74,7 +73,7 @@ export const NotificationListener = props => {
             {props.children}
             <div className="p-absolute transparent bottom-0 left-0 p-3">
                 {displayNotification && (
-                    <Snackbar {...notificationInfo} onClose={handleCloseNoti} />
+                    <SnackBar {...notificationInfo} onClose={handleCloseNoti} />
                 )}
             </div>
         </div>
