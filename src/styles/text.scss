@@ -1,22 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Pushster&display=swap');
-$Pushter: 'Pushster', cursive;
+@import url("https://fonts.googleapis.com/css2?family=Pushster&display=swap");
+$Pushter: "Pushster", cursive;
 
-@import url('https://fonts.googleapis.com/css2?family=Bona+Nova:wght@400;700&family=Pushster&display=swap');
-$BonaNova: 'Bona Nova', serif;
+@import url("https://fonts.googleapis.com/css2?family=Bona+Nova:wght@400;700&family=Pushster&display=swap");
+$BonaNova: "Bona Nova", serif;
 
-@import url('https://fonts.googleapis.com/css2?family=Bona+Nova:wght@700&family=Pushster&display=swap');
-$BonaNova-bold: 'Bona Nova', serif;
+@import url("https://fonts.googleapis.com/css2?family=Bona+Nova:wght@700&family=Pushster&display=swap");
+$BonaNova-bold: "Bona Nova", serif;
 
 p,
 span,
 div,
 a,
 li {
-    font-family: $BonaNova  !important;
+    font-family: $BonaNova !important;
+}
+
+b {
+    font-family: $BonaNova-bold !important;
 }
 
 .dark {
-
     p,
     span,
     div,
@@ -33,7 +36,7 @@ div {
 }
 
 .bold {
-    font-family: $BonaNova-bold  !important;
+    font-family: $BonaNova-bold !important;
 }
 
 .fw {

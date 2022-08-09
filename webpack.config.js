@@ -1,57 +1,54 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const webpack = require('webpack')
-const path = require('path')
+const HtmlWebpackPlugin = require("html-webpack-plugin")
+const webpack = require("webpack")
+const path = require("path")
 
 //let it handle dot env
-const environment = process.env.NODE_ENV === 'production' ? 'production' : 'development'
-const env = require('dotenv').config({ path: path.join(__dirname, 'env', `${environment}.env`) }).parsed
-const parseEnvKey = require('./src/utils/parseEnvKey')
-
-console.log(path.resolve(__dirname, './src/react/components'))
+const environment =
+    process.env.NODE_ENV === "production" ? "production" : "development"
+const env = require("dotenv").config({
+    path: path.join(__dirname, "env", `${environment}.env`)
+}).parsed
+const parseEnvKey = require("./src/utils/parseEnvKey")
 
 module.exports = {
     mode: environment,
     entry: path.join(__dirname, "src/index.js"), //'./app/index.js',
     output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js'
+        path: path.resolve(__dirname, "dist"),
+        filename: "bundle.js"
     },
     devServer: {
         static: {
-            directory: path.join(__dirname, 'public')
+            directory: path.join(__dirname, "public")
         },
         port: 3000,
-        historyApiFallback: true,
+        historyApiFallback: true
     },
     module: {
         rules: [
             {
                 test: /\.svg$/,
-                use: 'svg-inline-loader'
+                use: "svg-inline-loader"
             },
             {
                 test: /\.s[ac]ss$/i,
-                use: [
-                    'style-loader',
-                    'css-loader',
-                    'sass-loader',
-                ],
+                use: ["style-loader", "css-loader", "sass-loader"]
             },
             {
                 test: /\.(js|jsx)$/,
                 use: {
-                    loader: 'babel-loader'
+                    loader: "babel-loader"
                 },
-                exclude: /node_modules/,
+                exclude: /node_modules/
             },
             {
                 test: /\.(png|jpe?g|gif)$/i,
                 use: [
                     {
-                        loader: 'file-loader',
-                    },
-                ],
-            },
+                        loader: "file-loader"
+                    }
+                ]
+            }
         ]
     },
     plugins: [
@@ -62,14 +59,14 @@ module.exports = {
     ],
     resolve: {
         alias: {
-            'react-router-dom': path.resolve('./node_modules/react-router-dom'),
-            '~components': path.resolve(__dirname, './src/components'),
-            '~constants': path.resolve(__dirname, './src/constant'),
-            '~pages': path.resolve(__dirname, './src/pages'),
-            '~redux': path.resolve(__dirname, './src/redux'),
-            '~utils': path.resolve(__dirname, './src/utils'),
-            '~api': path.resolve(__dirname, './src/api'),
+            "react-router-dom": path.resolve("./node_modules/react-router-dom"),
+            "~components": path.resolve(__dirname, "./src/components"),
+            "~constants": path.resolve(__dirname, "./src/constant"),
+            "~pages": path.resolve(__dirname, "./src/pages"),
+            "~redux": path.resolve(__dirname, "./src/redux"),
+            "~utils": path.resolve(__dirname, "./src/utils"),
+            "~api": path.resolve(__dirname, "./src/api")
         },
-        extensions: ['.js', '.jsx', '.json'],
-    },
+        extensions: [".js", ".jsx", ".json"]
+    }
 }

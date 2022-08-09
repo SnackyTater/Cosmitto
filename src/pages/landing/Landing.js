@@ -1,37 +1,25 @@
 import React, {useEffect} from "react"
-import {ThemeButton} from "~components"
+import {ThemeButton, Logo} from "~components"
+
 import "./style.scss"
 
 export const LandingPage = () => {
-    useEffect(() => {
-        console.log("aaavbbb")
-        window.addEventListener(
-            "visibilitychange",
-            function () {
-                console.log(
-                    "document",
-                    document.hidden,
-                    document.visibilityState
-                )
-            },
-            false
-        )
-    }, [])
-
     return (
-        <div className="landing__container">
-            <nav>
-                <div>logo</div>
-                <ul>
-                    <li>Sản Phẩm</li>
-                    <li>Tìm Hiểu</li>
-                    <li>An Toàn</li>
-                    <li>Hỗ Trợ</li>
-                    <li>Tải về</li>
+        <div className="w-100 p-3">
+            <nav className="d-flex center-vertical justify-content-around bg-gray">
+                <div>
+                    <Logo />
+                </div>
+                <ul className="d-flex">
+                    <li className="px-4">Sản Phẩm</li>
+                    <li className="px-4">Tìm Hiểu</li>
+                    <li className="px-4">An Toàn</li>
+                    <li className="px-4">Hỗ Trợ</li>
+                    <li className="px-4">Tải về</li>
                 </ul>
                 <button>login</button>
             </nav>
-            <div style={{background: "grey", height: "200vh"}}></div>
+            <div></div>
         </div>
     )
 }

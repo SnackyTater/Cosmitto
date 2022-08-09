@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .flex {
     display: flex;
 }
@@ -32,7 +38,7 @@
 }
 
 .center-vertical {
-    justify-content: center !important;
+    align-items: center !important;
 }
 
 .circle {
@@ -45,4 +51,8 @@
     border-style: solid;
     border-radius: 10px;
     box-shadow: 1px 2px gray;
+}
+
+li {
+    list-style-type: none;
 }
