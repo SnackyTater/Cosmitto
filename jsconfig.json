@@ -8,7 +8,7 @@
             "~redux/*": ["./src/redux/*"],
             "~utils/*": ["./src/utils/*"],
             "~api/*": ["./src/api/*"],
-            "~/*": ["./src/*"]
+            "~/*": ["src/*"]
         },
         "module": "CommonJS",
         "target": "ES6",

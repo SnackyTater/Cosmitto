@@ -1,9 +1,9 @@
 import React from "react"
 import {Backdrop} from "~components/backdrop"
 
-export const ForgotPassword = ({closeForgotPassword}) => {
+export const Register = ({closeRegister}) => {
     return (
-        <Backdrop onClickBackdrop={closeForgotPassword}>
+        <Backdrop onClickBackdrop={closeRegister}>
             <div>awdawdawdawdadawda</div>
         </Backdrop>
     )

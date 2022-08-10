@@ -23,7 +23,7 @@ export const NotificationListener = props => {
         if (mounted) {
             if (auth) {
                 if (location.pathname !== "/chat" && !ws)
-                    setWS(new WebSocket("wss://ws.localhost:5000"))
+                    setWS(new WebSocket("wss://localhost:5000"))
                 else {
                     ws.close()
                     setWS(null)
