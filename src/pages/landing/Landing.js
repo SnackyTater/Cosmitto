@@ -24,11 +24,11 @@ export const LandingPage = () => {
                         <Logo />
                     </div>
                     <ul className="d-flex center">
-                        <li className="px-4">Sản Phẩm</li>
-                        <li className="px-4">Tìm Hiểu</li>
-                        <li className="px-4">An Toàn</li>
-                        <li className="px-4">Hỗ Trợ</li>
-                        <li className="px-4">Tải về</li>
+                        <li className="px-4 landing__nav__item">Sản Phẩm</li>
+                        <li className="px-4 landing__nav__item">Tìm Hiểu</li>
+                        <li className="px-4 landing__nav__item">An Toàn</li>
+                        <li className="px-4 landing__nav__item">Hỗ Trợ</li>
+                        <li className="px-4 landing__nav__item">Tải về</li>
                     </ul>
                     <NormalButton onClick={handleToggleLogin}>login</NormalButton>
                 </nav>
