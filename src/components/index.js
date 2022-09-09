@@ -4,5 +4,6 @@ export {OneKnobSlider, TwoKnobSlider} from "./slider"
 export {SingleAvatar, GroupAvatar} from "./avatar"
 export {Chip} from "./chip"
 export {Random} from "./random"
-export {SnackBar} from "./snackbar"
+export * from "./snackbar"
 export {Logo} from "./logo"
+export {FormikInput, FormikSelect} from './formik'

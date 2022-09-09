@@ -1,7 +1,11 @@
-.chip {
+div.chip {
     border: 1px solid !important;
     padding: 5px 10px;
     color: white;
     border-image-slice: 1;
     border-image-source: linear-gradient(135deg, );
+}
+
+div.chip[class*="active"] {
+    background-image: linear-gradient(135deg, hsla(13, 100%, 61%, 1), hsla(337, 98%, 57%, 1));
 }

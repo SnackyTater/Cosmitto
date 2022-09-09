@@ -1,0 +1,15 @@
+.fm-submit{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.fm-submit:active{
+    box-shadow: 2px 2px 2px gray;
+}

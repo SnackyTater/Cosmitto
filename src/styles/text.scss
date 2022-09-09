@@ -7,11 +7,7 @@ $BonaNova: "Bona Nova", serif;
 @import url("https://fonts.googleapis.com/css2?family=Bona+Nova:wght@700&family=Pushster&display=swap");
 $BonaNova-bold: "Bona Nova", serif;
 
-p,
-span,
-div,
-a,
-li {
+* {
     font-family: $BonaNova !important;
 }
 
@@ -50,5 +46,23 @@ div {
 
     &-bold {
         font-weight: bold;
+    }
+}
+
+.fs {
+    &-12 {
+        font-size: 12px;
+    }
+
+    &-14 {
+        font-size: 14px;
+    }
+
+    &-16 {
+        font-size: 16px;
+    }
+
+    &-18 {
+        font-size: 18px;
     }
 }

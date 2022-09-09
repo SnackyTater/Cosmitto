@@ -3,6 +3,7 @@
         "baseUrl": ".",
         "paths": {
             "~components/*": ["./src/components/*"],
+            "~components": ["./src/components"],
             "~constants/*": ["./src/constant/*"],
             "~pages/*": ["src/pages/*"],
             "~redux/*": ["./src/redux/*"],
@@ -10,11 +11,8 @@
             "~api/*": ["./src/api/*"],
             "~/*": ["src/*"]
         },
-        "module": "CommonJS",
-        "target": "ES6",
-        "moduleResolution": "classic",
-        "jsx": "react"
+        
     },
-    "include": ["src/**/*.js", "src/**/*.jsx"],
+    "include": ["src/**/*.js", "src/**/*.jsx", "src/**/index.js"],
     "exclude": ["node_modules", "dist"]
 }

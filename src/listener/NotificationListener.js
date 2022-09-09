@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react"
 import {useSelector} from "react-redux"
 
-import {SnackBar} from "~components/snackbar"
+import {Snackbar} from "~components/snackbar"
 
 const image =
     "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cmFuZG9tfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
@@ -34,6 +34,7 @@ export const NotificationListener = props => {
     }, [auth, location])
 
     useEffect(() => {
+        let timeoutID
         if (ws) {
             ws.onopen = event => {
                 console.log("event", event)
@@ -54,7 +55,7 @@ export const NotificationListener = props => {
 
         return () => {
             clearTimeout(timeoutID)
-            ws.close()
+            if(ws) ws.close()
         }
     }, [ws])
 

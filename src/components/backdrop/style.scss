@@ -1,0 +1,30 @@
+@import '../../styles/responsive';
+
+.backdrop{
+    max-height: 90vh;
+    min-width: 10vw;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    @include desktop{
+        max-width: 40vw;
+    }
+
+    @include tablet{
+        max-width: 90vw;
+    }
+
+    @include mobile{
+        max-width: 90vw;
+    }
+}
+
+.backdrop::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.backdrop {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
