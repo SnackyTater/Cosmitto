@@ -12,7 +12,7 @@ const parseEnvKey = require("./src/utils/parseEnvKey")
 
 module.exports = {
     mode: environment,
-    entry: path.join(__dirname, "src/index.js"), //'./app/index.js',
+    entry: { bundle: path.join(__dirname, "src/index.js"),},  //'./app/index.js',
     output: {
         path: path.resolve(__dirname, "dist"),
         filename: "bundle.js"

@@ -7,6 +7,8 @@ import {
     RESET_PASSWORD as resetURL
 } from "~constants/api"
 
+import {api} from '~constants/axios'
+
 export const getAccountInfo = (config = {}) => axios.get(accountURL, config)
 
 export const createAccount = (body = {}, config = {}) => axios.post(accountURL, body, config)
@@ -24,3 +26,5 @@ export const sendForgotPasswordEmail = (body = {}, config = {}) =>
     axios.post(forgotURL, body, config)
 
 export const resetPassword = (body = {}, config = {}) => axios.post(resetURL, body, config)
+
+export const error = () => axios.get('/api/account/error')

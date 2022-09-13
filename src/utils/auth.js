@@ -23,3 +23,7 @@ export const checkAuthorization = () => {
     if(token) return true
     return false
 }
+
+export const deleteToken = () => {
+    
+}

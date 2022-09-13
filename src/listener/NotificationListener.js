@@ -21,7 +21,7 @@ export const NotificationListener = props => {
     useEffect(() => {
         let mounted = true
         if (mounted) {
-            if (auth) {
+            if (auth && Object.keys(auth).length) {
                 if (location.pathname !== "/chat" && !ws)
                     setWS(new WebSocket("wss://localhost:5000"))
                 else {

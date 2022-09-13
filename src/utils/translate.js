@@ -1,23 +1,25 @@
 import { 
-    EN,
-    EN_TYPE,
-    VN,
-    VN_TYPE 
+    EN, EN_TYPE,
+    VN, VN_TYPE 
 } from '../constant/i18n'
 
-export const translate = (langKey = 'VN', transKey) => {
-    let keyList = {}
-    switch(langKey){
-        case VN_TYPE:
-            keyList = VN
-            break
-        case EN_TYPE:
-            keyList = EN
-            break
-        default: 
-            keyList = VN
-            break
-    }
+import { store } from '../redux'
 
-    return keyList[transKey] ? keyList[transKey] : transKey
+export const translate = (transKey) => {
+    const langKey = store.getState(state => state.config.lang)
+    console.log('aaaaa', VN)
+    let keyList = {}
+    // switch(langKey){
+    //     case VN_TYPE:
+    //         keyList = VN
+    //         break
+    //     case EN_TYPE:
+    //         keyList = EN
+    //         break
+    //     default: 
+    //         keyList = VN
+    //         break
+    // }
+
+    // return keyList[transKey] ? keyList[transKey] : transKey
 }

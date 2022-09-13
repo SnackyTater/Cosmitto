@@ -1,19 +1,20 @@
 import React from 'react';
-import { Route, BrowserRouter, Routes } from 'react-router-dom';
+import { Route, BrowserRouter, Routes, unstable_HistoryRouter as HistoryRouter} from 'react-router-dom';
 
 //
 import PrivateRoute from './privateRoute';
 import PublicRoute from './publicRoute';
+import CustomRouter from './customRouter';
 
 //
 import { path } from './path';
-import { history } from '../utils/history';
+import { history } from '~constants/history';
 
 export function RootRoute() {
   return (
-    <BrowserRouter history={history}>
-        <Routes>
-          {
+    <CustomRouter history={history}>
+      <Routes>
+         {
             path.map((item, index) => {
               return <Route 
                 path={item.path} 
@@ -22,11 +23,13 @@ export function RootRoute() {
                 ) : (
                   <PublicRoute Component={item.component}/>
                 )}
+                
                 key={index}
               />
             })
           }
-        </Routes>
-    </BrowserRouter>
+      </Routes>
+         
+    </CustomRouter>
   )
 }
