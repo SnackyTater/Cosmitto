@@ -1,5 +1,5 @@
 import { put, call } from 'redux-saga/effects'
-import { login } from '~api/account'
+import { error } from '~api/account'
 import {  
     LOGIN_REQUEST,
     LOGIN_SUCCESS,
@@ -12,7 +12,7 @@ export function* loginAsync(action){
 
         const response = yield call(async() => {
             const {body, config} = action.payload
-            return await login(body, config)
+            return await error(body, config)
         })
 
         put({ type: LOGIN_SUCCESS, payload: response.data })

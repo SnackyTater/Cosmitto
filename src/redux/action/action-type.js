@@ -1,5 +1,6 @@
 export const INCREMENT = 'INCREMENT'
 export const DECREMENT = 'DECREMENT'
+export const UPDATE_LANGUAGE = 'UPDATE_LANGUAGE'
 
 export const LOGIN = 'LOGIN'
 export const LOGIN_REQUEST = 'LOGIN_REQUEST'

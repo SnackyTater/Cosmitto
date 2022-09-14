@@ -6,7 +6,7 @@ import {store as rootStore} from "./redux"
 import {App} from "./app"
 
 import "./styles/metric.scss"
-import "./styles/color.scss"
+import "./styles/_color.scss"
 import "./styles/main.scss"
 import "./styles/text.scss"
 

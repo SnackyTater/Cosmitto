@@ -4,10 +4,9 @@ import { useFormikContext } from 'formik'
 import './style.scss'
 
 export const Submit = ({title, onPress, children}) => {
-    const { handleSubmit, values, errors } = useFormikContext()
+    const { handleSubmit } = useFormikContext()
 
     const handlePress = () => {
-      console.log('aaa', values, errors)
       if(onPress) onPress()
       handleSubmit()
     }

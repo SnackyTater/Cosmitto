@@ -6,6 +6,7 @@ import {Register} from "./Register"
 import {Login} from "./Login"
 
 import "./style.scss"
+import background from '/public/assets/image/background.jpg'
 
 export const LandingPage = () => {
     const [displayLogin, setDisplayLogin] = useState(false)
@@ -17,9 +18,9 @@ export const LandingPage = () => {
     const handleToggleRegister = () => setDisplayRegister(prev => !prev)
 
     return (
-        <>
-            <div className="w-100">
-                <nav className="d-flex center-vertical justify-content-around p-3 bg-gray">
+        <React.Fragment>
+            <div className="VW-100 VH-100 flex-fill">
+                <nav className="d-flex center-vertical justify-content-around p-3 bg-translucent-gray">
                     <div>
                         <Logo />
                     </div>
@@ -32,11 +33,19 @@ export const LandingPage = () => {
                     </ul>
                     <NormalButton onClick={handleToggleLogin}>login</NormalButton>
                 </nav>
-                <div></div>
+                <div className="fill d-flex justify-content-center align-items-center">
+                    <div className="landing__background__container">
+                        <img src={background} alt={''} className='landing__background'/>
+                    </div>
+                    <div>
+                        <p className="txt-white">SWIPE RIGHT</p>
+                        <NormalButton onClick={handleToggleRegister}>Register</NormalButton>
+                    </div>
+                </div>
             </div>
             {displayLogin && <Login closeLogin={handleToggleLogin} />}
             {displayForgotPassword && <ForgotPassword closeForgotPassword={handleToggleForgot} />}
             {displayRegister && <Register closeRegister={handleToggleRegister} />}
-        </>
+        </React.Fragment>
     )
 }

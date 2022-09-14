@@ -5,21 +5,21 @@ import {
 
 import { store } from '../redux'
 
-export const translate = (transKey) => {
-    const langKey = store.getState(state => state.config.lang)
-    console.log('aaaaa', VN)
+export const translate = (transKey = '') => {
+    const { language } = store.getState()
+    
     let keyList = {}
-    // switch(langKey){
-    //     case VN_TYPE:
-    //         keyList = VN
-    //         break
-    //     case EN_TYPE:
-    //         keyList = EN
-    //         break
-    //     default: 
-    //         keyList = VN
-    //         break
-    // }
+    switch(language){
+        case VN_TYPE:
+            keyList = VN
+            break
+        case EN_TYPE:
+            keyList = EN
+            break
+        default: 
+            keyList = VN
+            break
+    }
 
-    // return keyList[transKey] ? keyList[transKey] : transKey
+    return keyList[transKey] || transKey
 }

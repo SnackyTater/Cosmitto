@@ -73,3 +73,12 @@ li {
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none;
 }
+
+.flex-fill{
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-fill > .fill{
+    flex: 1;
+}

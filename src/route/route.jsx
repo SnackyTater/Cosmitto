@@ -1,14 +1,11 @@
 import React from 'react';
-import { Route, BrowserRouter, Routes, unstable_HistoryRouter as HistoryRouter} from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
-//
+import { history } from '~constants/history';
+import CustomRouter from './customRouter';
 import PrivateRoute from './privateRoute';
 import PublicRoute from './publicRoute';
-import CustomRouter from './customRouter';
-
-//
 import { path } from './path';
-import { history } from '~constants/history';
 
 export function RootRoute() {
   return (
@@ -18,18 +15,16 @@ export function RootRoute() {
             path.map((item, index) => {
               return <Route 
                 path={item.path} 
-                element={(item.private) ? (
-                  <PrivateRoute Component={item.component}/>
-                ) : (
-                  <PublicRoute Component={item.component}/>
-                )}
-                
+                element={item.private ? <PrivateRoute Component={item.component}/> : <PublicRoute Component={item.component}/>}
                 key={index}
-              />
+              >
+                {
+                  item.children?.map((child, index) => <Route path={child.path} element={<child.component/>} key={index}/>)
+                }
+              </Route>
             })
           }
       </Routes>
-         
     </CustomRouter>
   )
 }

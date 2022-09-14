@@ -6,7 +6,7 @@ import { checkAuthorization } from '../utils/auth';
 
 export default function PrivateRoute({ path, Component, ...rest }) {
     const isAuth = checkAuthorization();
-
+    console.log('awdawdawd')
     const CustomRoute = (props) => {
         if (isAuth) {
             return <Component {...props} {...rest} />

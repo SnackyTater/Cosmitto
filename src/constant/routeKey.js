@@ -1,0 +1,7 @@
+export const LANDING = 'LANDING'
+export const HOME = 'HOME'
+export const CHAT = 'CHAT'
+export const PROFILE = 'LANDING'
+export const ACCOUNT = 'LANDING'
+export const CONFIG = 'LANDING'
+export const FORGOT_PASSWORD = 'LANDING'
